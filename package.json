@@ -1,0 +1,42 @@
+{
+  "name": "@mawhea/module-lambda-handlers",
+  "version": "2.0.2",
+  "description": "Module exports a base lambda handler class and various subclasses extending the base class.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "prebuild": "npm run test",
+    "prepare": "npm run build",
+    "test": "mocha -r ts-node/register 'test/unit/*.test.ts'",
+    "watch": "tsc-watch --noClear -p ./tsconfig.json"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "handler",
+    "node.js"
+  ],
+  "author": "mjwheatley",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@mawhea/module-aws-services": "2.0.1",
+    "@mawhea/module-winston-logger": "2.0.1",
+    "@mawhea/module-config-singleton": "2.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.83",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.4.10",
+    "aws-sdk": "^2.1123.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.0",
+    "ts-node": "^10.1.0",
+    "tsc-watch": "^4.4.0",
+    "typescript": "4.3.5"
+  }
+}
