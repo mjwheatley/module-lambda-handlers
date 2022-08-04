@@ -1,6 +1,6 @@
 {
   "name": "@mawhea/module-lambda-handlers",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Module exports a base lambda handler class and various subclasses extending the base class.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

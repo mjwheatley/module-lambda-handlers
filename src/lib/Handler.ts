@@ -1,6 +1,10 @@
 import { Logger } from '@mawhea/module-winston-logger';
 import { singleton as appConfig } from '@mawhea/module-config-singleton';
 
+const {
+  LOG_LEVEL = `silly`
+} = process.env;
+
 const defaultResponse = {
   statusCode: 200,
   headers: {
@@ -43,7 +47,10 @@ export class Handler {
       LambdaVersion: context.functionVersion,
       InvokeId: context.awsRequestId
     };
-    this.logger = new Logger({ metaData: this.loggerMetaData });
+    this.logger = new Logger({
+      metaData: this.loggerMetaData,
+      config: { logger: { LOG_LEVEL } }
+    });
     this.logger.silly(`Trace`, `Handler.constructor()`);
     this.logger.info(`EVENT`, event);
   }
